@@ -24,8 +24,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-const principleAmount = parseFloat(readlineSync.question("enter the principle amount"));
-const interestRate = parseFloat(readlineSync.question("enter the interest rate"));
-const numberOfYear = parseFloat(readlineSync.question("enter the number of the years"));
-const simpleInterest = (principleAmount * interestRate * numberOfYear) / 100;
-console.log(`simple interest: ${simpleInterest}`);
+function countEven(arr) {
+    let count = 0;
+    for (let i of arr) {
+        if (i % 2 === 0) {
+            count++;
+        }
+    }
+    return count;
+}
+function readArray(size) {
+    const data = readlineSync.question("enter the value Array(comma separated) :");
+    return data.split(",").map((num) => parseInt(num.trim(), 10));
+}
+const size = parseInt(readlineSync.question("enter the size of the array"), 10);
+const arr1 = readArray(size);
+console.log(`Number of even number in the given array is ${countEven(arr1)}`);

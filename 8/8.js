@@ -24,8 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-const principleAmount = parseFloat(readlineSync.question("enter the principle amount"));
-const interestRate = parseFloat(readlineSync.question("enter the interest rate"));
-const numberOfYear = parseFloat(readlineSync.question("enter the number of the years"));
-const simpleInterest = (principleAmount * interestRate * numberOfYear) / 100;
-console.log(`simple interest: ${simpleInterest}`);
+const userInput = parseInt(readlineSync.question("enter the limit"));
+let result = 0;
+for (let i = 1; i <= userInput; i = i + 2) {
+    result += i;
+}
+console.log("Sum of odd number =", result);

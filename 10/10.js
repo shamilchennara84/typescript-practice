@@ -24,8 +24,24 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-const principleAmount = parseFloat(readlineSync.question("enter the principle amount"));
-const interestRate = parseFloat(readlineSync.question("enter the interest rate"));
-const numberOfYear = parseFloat(readlineSync.question("enter the number of the years"));
-const simpleInterest = (principleAmount * interestRate * numberOfYear) / 100;
-console.log(`simple interest: ${simpleInterest}`);
+function swapArray(arr1, arr2) {
+    const temp = [...arr1];
+    arr1.length = 0;
+    arr1.push(...arr2);
+    arr2.length = 0;
+    arr2.push(...temp);
+}
+function readArray(size) {
+    const data = readlineSync.question("enter the value Array(comma separated) :");
+    return data.split(',').map((num) => parseInt(num.trim(), 10));
+}
+const size = parseInt(readlineSync.question("enter the size of the array"), 10);
+const arr1 = (readArray(size));
+const arr2 = (readArray(size));
+console.log(`Arrays before swapping:`);
+console.log(`Array1: ${arr1}`);
+console.log(`Array2: ${arr2}`);
+swapArray(arr1, arr2);
+console.log(`Arrays after swapping:`);
+console.log(`Array1: ${arr1}`);
+console.log(`Array2: ${arr2}`);

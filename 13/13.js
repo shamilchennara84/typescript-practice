@@ -24,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-const principleAmount = parseFloat(readlineSync.question("enter the principle amount"));
-const interestRate = parseFloat(readlineSync.question("enter the interest rate"));
-const numberOfYear = parseFloat(readlineSync.question("enter the number of the years"));
-const simpleInterest = (principleAmount * interestRate * numberOfYear) / 100;
-console.log(`simple interest: ${simpleInterest}`);
+function pallindrom(data) {
+    return data.split('').reverse().join('');
+}
+const string = readlineSync.question('enter the string : ');
+string === pallindrom(string) ? console.log(`Entered string is a pallindrome`) : console.log("Entered string is not a pallindrome");

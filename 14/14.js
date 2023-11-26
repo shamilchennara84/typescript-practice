@@ -24,8 +24,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const readlineSync = __importStar(require("readline-sync"));
-const principleAmount = parseFloat(readlineSync.question("enter the principle amount"));
-const interestRate = parseFloat(readlineSync.question("enter the interest rate"));
-const numberOfYear = parseFloat(readlineSync.question("enter the number of the years"));
-const simpleInterest = (principleAmount * interestRate * numberOfYear) / 100;
-console.log(`simple interest: ${simpleInterest}`);
+function readArray(size) {
+    const arr = [];
+    console.log(`Enter the values of array (size ${size}x${size}):`);
+    for (let i = 0; i < size; i++) {
+        const row = readlineSync.question(`Input for row ${i + 1} (space-separated values): `).split(' ').map(num => parseInt(num, 10));
+        arr.push(row);
+    }
+    return arr;
+}
