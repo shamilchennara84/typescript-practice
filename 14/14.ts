@@ -32,8 +32,10 @@ const size = parseInt(readlineSync.question("enter the size of array: "),10)
 
 const arr1 = readArray(size)
 const arr2 = readArray(size)
+console.log(arr1);
+console.log(arr2);
 
 const result = addArrays(arr1,arr2)
 
 console.log("Sum of 2 arrays is:");
-resultArray.forEach((row) => console.log(row.join(" ")));
+result.forEach((row) => console.log(row.join(" ")));
