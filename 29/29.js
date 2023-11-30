@@ -1,5 +1,6 @@
+"use strict";
 function myFilter(myArray, callback) {
-    var sum = myArray.reduce(function (acc, val) { return acc + val; }, 0);
+    const sum = myArray.reduce((acc, val) => acc + val, 0);
     if (callback(sum)) {
         return sum;
     }
@@ -7,7 +8,7 @@ function myFilter(myArray, callback) {
         return 0;
     }
 }
-var inputArray = [1, 2, 3, 4, 6];
-var isSumEven = function (sum) { return sum % 2 === 0; };
-var result = myFilter(inputArray, isSumEven);
+const inputArray = [1, 2, 3, 4, 6];
+const isSumEven = (sum) => sum % 2 === 0;
+const result = myFilter(inputArray, isSumEven);
 console.log(result);

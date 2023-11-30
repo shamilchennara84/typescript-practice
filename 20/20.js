@@ -1,10 +1,11 @@
-var rows = 4; // You can adjust the number of rows as needed
-var currentNumber = 1;
-for (var i = 1; i <= rows; i++) {
-    var rowOutput = "";
-    for (var j = 1; j <= i; j++) {
-        rowOutput += "".concat(currentNumber, "\t");
+"use strict";
+const rows = 4;
+let currentNumber = 1;
+for (let i = 1; i <= rows; i++) {
+    let rowOutput = "";
+    for (let j = 1; j <= i; j++) {
+        rowOutput += `${currentNumber}\t`;
         currentNumber++;
     }
-    console.log(rowOutput); // Each row is printed with console.log
+    console.log(rowOutput);
 }

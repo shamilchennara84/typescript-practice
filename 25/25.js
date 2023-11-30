@@ -1,4 +1,5 @@
-var library = [
+"use strict";
+const library = [
     {
         title: "Bill Gates",
         author: "The Road Ahead",
@@ -15,12 +16,12 @@ var library = [
         readingStatus: false,
     },
 ];
-for (var _i = 0, library_1 = library; _i < library_1.length; _i++) {
-    var book = library_1[_i];
+for (const book of library) {
     if (book.readingStatus) {
-        console.log("Already read ".concat(book.title, " by ").concat(book.author, ".\n"));
+        console.log(`Already read ${book.title} by ${book.author}.
+`);
     }
     else {
-        console.log("You still need to read ".concat(book.title, " by ").concat(book.author));
+        console.log(`You still need to read ${book.title} by ${book.author}`);
     }
 }
